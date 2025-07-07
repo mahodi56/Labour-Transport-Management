@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking - Labour & Transport Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="45757689.jpg" alt="Logo">
+      <h1>Labour & Transport Management</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html">Booking</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Booking Form</h2>
+      <p>Fill up the form below to book a labourer or transport service.</p>
+
+      <form class="booking-form" onsubmit="submitBooking(event)">
+        <label>Your Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Phone Number:</label>
+        <input type="tel" placeholder="Enter your phone number" required>
+
+        <label>Select Service:</label>
+        <select required>
+          <option value="">-- Choose --</option>
+          <option value="Electrician">Electrician</option>
+          <option value="Driver">Driver</option>
+          <option value="Loader">Loader</option>
+          <option value="Van">Van</option>
+          <option value="Truck">Truck</option>
+        </select>
+
+        <label>Booking Date:</label>
+        <input type="date" required>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Labour & Transport Management</p>
+  </footer>
+
+  <script>
+    function submitBooking(e) {
+      e.preventDefault();
+      alert("Your booking request has been received! We'll contact you shortly.");
+    }
+  </script>
+
+</body>
+</html>

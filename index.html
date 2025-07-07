@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Labour & Transport Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="45757689.jpg" alt="Labour Logo" />
+      <h1>Labour & Transport Management</h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#labour">Labour</a>
+      <a href="#transport">Transport</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="booking.html">Bookings</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h2>Book Labour & Transport Easily!</h2>
+      <p>Hire trusted labourers, pickups, and vans for any job — anywhere in Bangladesh!</p>
+      <button onclick="window.location.href='booking.html'">Book Now</button>
+    </section>
+
+    <section id="transport">
+      <h3>Available Transport</h3>
+
+      <input type="text" id="searchTransport" placeholder="Search Transport" onkeyup="searchTransport()" />
+
+      <div class="card transport-card">
+        <img src="van.JPEG" alt="Van" />
+        <div class="transport-text">
+          <h4>Van</h4>
+          <p>For Short-Distance</p>
+        </div>
+        <button onclick="bookItem('Van')">Book</button>
+      </div>
+
+      <div class="card transport-card">
+        <img src="pickup.JPEG" alt="Pickup" />
+        <div class="transport-text">
+          <h4>Pickup</h4>
+          <p>Capacity: 1.5 Ton</p>
+        </div>
+        <button onclick="bookItem('Pickup')">Book</button>
+      </div>
+
+      <div class="card transport-card">
+        <img src="truck.JPEG" alt="Truck" />
+        <div class="transport-text">
+          <h4>Truck</h4>
+          <p>Capacity: 5 Ton</p>
+        </div>
+        <button onclick="bookItem('Truck')">Book</button>
+      </div>
+    </section>
+
+    <section id="labour">
+      <h3>Available Labour</h3>
+
+      <input type="text" id="searchLabour" placeholder="Search Labour" onkeyup="searchLabour()" />
+
+      <div class="card joy">
+        <h4>Joy (Electrician)</h4>
+        <p>Available Today</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.0)</p>
+        <button onclick="bookItem('Joy (Electrician)')">Book</button>
+      </div>
+
+      <div class="card muntasir">
+        <h4>Muntasir (Loader)</h4>
+        <p>Available Tomorrow</p>
+        <p class="rating high">⭐️⭐️⭐️⭐️⭐️ (5.0)</p>
+        <button onclick="bookItem('Muntasir (Loader)')">Book</button>
+      </div>
+
+      <div class="card druvo">
+        <h4>Druvo (Driver)</h4>
+        <p>Available Today</p>
+        <p class="rating mid">⭐️⭐️⭐️ (3.0)</p>
+        <button onclick="bookItem('Druvo (Driver)')">Book</button>
+      </div>
+
+      <div class="card mahodi">
+        <h4>Mahodi (Supervisor)</h4>
+        <p>Available on Call</p>
+        <p class="rating">⭐️⭐️⭐️⭐️ (4.5)</p>
+        <button onclick="bookItem('Mahodi (Supervisor)')">Book</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Labour & Transport Management</p>
+  </footer>
+
+  <script>
+    function bookItem(itemName) {
+      alert(itemName + " booked successfully!");
+    }
+
+    function searchLabour() {
+      const input = document.getElementById("searchLabour").value.toUpperCase();
+      const cards = document.querySelectorAll("#labour .card");
+      cards.forEach(card => {
+        const name = card.querySelector("h4").innerText.toUpperCase();
+        card.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+
+    function searchTransport() {
+      const input = document.getElementById("searchTransport").value.toUpperCase();
+      const cards = document.querySelectorAll("#transport .transport-card");
+      cards.forEach(card => {
+        const name = card.querySelector("h4").innerText.toUpperCase();
+        card.style.display = name.includes(input) ? "flex" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>
